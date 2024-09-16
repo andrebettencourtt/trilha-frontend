@@ -1,0 +1,33 @@
+.modalContainer {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  inset: 0;
+  backdrop-filter: blur(2px);
+}
+
+.modalContent {
+  padding: 30px 40px 30px 40px;
+  width: 50rem;
+  height: auto;
+  border-radius: 1.875rem;
+  background: var(--greyPurple-300);
+  border: 2px solid var(--white-100);
+}
+
+.iconModal {
+  width: 2.3rem;
+  height: 2.3rem;
+  cursor: pointer;
+  position: absolute;
+  right: 600px;
+}
+
+.divButtonModal {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: end;
+}
