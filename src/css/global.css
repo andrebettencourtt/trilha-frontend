@@ -1,0 +1,53 @@
+:root {
+  --white-200: #ededee;
+  --black-800: #090b10;
+
+  --blue-100: #01c4e7;
+  --blue-royal-200: #0449e9;
+  --blue-royal-300: #074dea;
+  --blue-royal-400: #1a429c;
+  --blue-royal-500: #2b52a1;
+
+  --grey-blue-300: #8893b0;
+  --grey-blue-700: #4c535f;
+  --grey-blue-900: #313846;
+
+  --green-200: #27ae60;
+
+  --purple-100: #676179;
+  --purple-600: #2b2738;
+  --purple-800: #3b364c;
+  --purple-300: #6e54b5;
+
+  --white-100: #fbfbfb;
+
+  --lightPurple-100: #7c7c84;
+  --lightPurple-200: #706c7d;
+  --lightPurple-300: #8274af;
+
+  --greyPurple-100: #8f8b99;
+  --greyPurple-200: #bda8f7;
+
+  --greyPurple-300: #7c7b89;
+}
+
+/*#676179 - fundo 
+#2b2738 - background page
+#6e54b5 - button
+#fbfbfb - cor texto
+#7c7c84 - cor subtexto
+#706c7d - cor subtexto 2
+#8274af - cor links
+#8f8b99 - cor bordas
+#bda8f7 - cor bordas acessas*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--purple-100);
+  color: var(--white-200);
+}
