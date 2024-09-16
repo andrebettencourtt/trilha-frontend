@@ -1,0 +1,134 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90rem;
+  height: 55rem;
+  border-radius: 1.875rem;
+  background: var(--grey-blue-900);
+  margin: 35px;
+  padding: 10rem;
+}
+
+.boxSignIn {
+  display: flex;
+  justify-content: center;
+  text-align: right;
+  flex-direction: column;
+  width: 50vw;
+  height: 43.25rem;
+}
+
+.BoxDivSignIn {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+
+.boxDivSignUp {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+
+.inBoxDivSignUp {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+.boxSignUp {
+  display: flex;
+  justify-content: center;
+  text-align: left;
+  flex-direction: column;
+  width: 50vw;
+  height: 43.25rem;
+}
+
+.h4 {
+  color: var(--white-200);
+  font-family: Angkor;
+  font-size: 1.5625rem;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.h1 {
+  color: var(--white-200);
+  font-family: Angkor;
+  font-size: 3.125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.p {
+  margin-top: 20px;
+  color: var(--white-200);
+  font-family: Siemreap;
+  font-size: 1.5625rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.a {
+  color: var(--blue-100, #01c4e7);
+  font-family: Siemreap;
+  font-size: 1.5625rem;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: none;
+}
+
+.inputBoxName {
+  width: 19.6875rem;
+  height: 5rem;
+  border-radius: 1.25rem;
+  border: 2px solid var(--blue-100);
+  background: var(--grey-blue-300);
+  padding-left: 10px;
+
+  color: var(--white-200);
+  font-family: Candal;
+  font-size: 1.5625rem;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.inputBox {
+  width: 40rem;
+  height: 5rem;
+  border-radius: 1.25rem;
+  border: 2px solid var(--blue-100);
+  background: var(--grey-blue-300);
+  padding-left: 10px;
+
+  color: var(--white-200);
+  font-family: Candal;
+  font-size: 1.5625rem;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.button {
+  width: 10.625rem;
+  height: 4rem;
+  background: var(--blue-royal-500);
+  border-radius: 1.25rem;
+  border: 2px solid var(--blue-100);
+
+  color: var(--white-200, #ededee);
+  font-family: Candal;
+  font-size: 1.5625rem;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.span {
+  display: flex;
+  justify-content: right;
+}
