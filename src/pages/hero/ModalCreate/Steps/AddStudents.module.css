@@ -1,0 +1,61 @@
+.contentAddStudents {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.textAddStudents {
+  color: var(--white-100);
+  font-size: 1.5625rem;
+}
+
+.contentBoxEmail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  flex-direction: row;
+  align-items: center;
+}
+
+.contentEmail {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  width: fit-content;
+  height: 3.125rem;
+  border-radius: 0.9375rem;
+  border: 1px solid var(--white-100);
+  background: var(--lightPurple-200);
+  color: var(--white-100);
+  font-size: 1.375rem;
+}
+
+.lineModal {
+  width: 43.75rem;
+  background-color: var(--white-100);
+  height: 0.0625rem;
+  margin-top: 10px;
+}
+
+.divButtonAddStudents {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttonAddStudents {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--purple-100);
+  padding: 0.5rem;
+  border-radius: 1rem;
+  border: 1px solid var(--white-100);
+  color: var(--white-100);
+  cursor: pointer;
+}
+
+.textButtonStudents {
+  font-size: 1.3rem;
+}
