@@ -1,0 +1,107 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 2.31rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  align-items: center;
+  width: 85rem;
+  height: 6.25rem;
+  border: 2px solid white;
+  border-radius: 1.875rem;
+}
+
+.divLogoHeader {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  width: 50%;
+  gap: 10rem;
+}
+.divLogoHeader h2 {
+  margin-top: 4px;
+}
+
+.divInputHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 50%;
+}
+
+.avatar {
+  width: 4.28819rem;
+  height: 4.0625rem;
+  border: 3px solid var(--green-200);
+  border-radius: 62.5rem;
+}
+
+.searchBar {
+  width: 26.5rem;
+  height: 3.75rem;
+  border-radius: 1.25rem;
+  border: 2px solid var(--white-100);
+  background: var(--lightPurple-100);
+
+  padding: 0 15px;
+  background-color: var(--lightPurple-300);
+  font-family: Candal;
+  font-size: 1.3rem;
+  outline: none;
+}
+
+.searchBar::placeholder {
+  color: var(--white-100);
+}
+
+.divNav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+  width: 16.25rem;
+  height: 48rem;
+
+  border: 2px solid var(--white-100);
+  border-radius: 1.875rem;
+}
+
+.divWindom {
+  margin-top: 1rem;
+  width: 67.5rem;
+  height: 48rem;
+  background: var(--darkPurple-600);
+  border: 2px solid var(--white-100);
+  border-radius: 1.875rem;
+}
+
+.mainContent {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.buttonContent {
+  width: 13.9375rem;
+  height: 3.5rem;
+  border-radius: 1.25rem;
+  border: 2px solid var(--white-100);
+  background: var(--darkPurple-600);
+  color: var(--white-100);
+  gap: 1.5rem;
+  cursor: pointer;
+
+  display: flex;
+  padding-left: 15px;
+  justify-content: left;
+  align-items: center;
+  font-size: 1.5rem;
+}
