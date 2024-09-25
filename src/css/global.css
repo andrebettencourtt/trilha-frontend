@@ -15,7 +15,7 @@
   --green-200: #27ae60;
 
   --purple-100: #676179;
-  --purple-600: #2b2738;
+  --purple-600: #0f1214;
   --purple-800: #3b364c;
   --purple-300: #6e54b5;
 
@@ -48,6 +48,6 @@
 }
 
 body {
-  background-color: var(--purple-100);
+  background-color: var(--grey-blue-900);
   color: var(--white-200);
 }

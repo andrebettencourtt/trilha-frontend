@@ -24,8 +24,8 @@
   width: 39.6875rem;
   height: 4.375rem;
   border-radius: 1.25rem;
-  background: var(--purple-100);
-  border: 2px solid var(--white-100);
+  background: var(--grey-blue-300);
+  border: none;
   justify-content: space-around;
   text-align: left;
 }
@@ -35,8 +35,6 @@
   padding-left: 20px;
   font-family: Manrope;
   font-size: 1.5rem;
-  font-style: normal;
-  line-height: normal;
 }
 
 .lineModal {
@@ -54,11 +52,13 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
-  background-color: var(--purple-100);
+  width: 16rem;
+  background-color: var(--blue-royal-500);
   padding: 0.5rem;
   border-radius: 1rem;
-  border: 1px solid var(--white-100);
+  border: 1px solid var(--blue-100);
   color: var(--white-100);
   cursor: pointer;
 }

@@ -24,8 +24,8 @@
   width: fit-content;
   height: 3.125rem;
   border-radius: 0.9375rem;
-  border: 1px solid var(--white-100);
-  background: var(--lightPurple-200);
+  border: none;
+  background: var(--grey-blue-300);
   color: var(--white-100);
   font-size: 1.375rem;
 }
@@ -47,15 +47,18 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 0.5rem;
-  background-color: var(--purple-100);
-  padding: 0.5rem;
+  justify-content: center;
+
+  background-color: var(--blue-royal-500);
+  padding: 10px 8px 10px 3px;
   border-radius: 1rem;
-  border: 1px solid var(--white-100);
+  border: 1px solid var(--blue-100);
   color: var(--white-100);
   cursor: pointer;
+  font-size: 1.2rem;
+  outline: none;
 }
 
 .textButtonStudents {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
 }
