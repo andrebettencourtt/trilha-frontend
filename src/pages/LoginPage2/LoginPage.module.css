@@ -1,15 +1,21 @@
+.body {
+  background-color: var(--grey-blue-300);
+}
+
 .headerStyle {
+  position: fixed;
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-left: 7%;
   margin-right: 7%;
   height: 100px;
+  width: 85%;
   font-size: 1.5rem;
 }
 
 .containerSignUp {
-  height: 800px;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -36,7 +42,7 @@
   width: 70rem;
   height: 40rem;
   border-radius: 1rem;
-  background: #2b2738;
+  background: var(--grey-blue-900);
   border: 1px solid var(--white-100);
   gap: 20px;
   padding: 20px;
@@ -118,7 +124,7 @@ img {
 .buttonSignIn {
   text-decoration: none;
   background-color: transparent;
-  color: var(--lightPurple-300);
+  color: var(--blue-100);
   border: none;
   font-size: 1.3rem;
   cursor: pointer;
@@ -143,12 +149,12 @@ img {
   width: 100%;
   height: 3rem;
   border-radius: 0.5rem;
-  border: 5px solid var(--grePurple-300);
+  border: none;
   padding: 0 15px;
-  background-color: var(--lightPurple-300);
+  background-color: var(--grey-blue-300);
   font-family: Candal;
   font-size: 1.3rem;
-  outline: none;
+  outline: 1px solid var(--blue-100);
 }
 
 .inputBoxName::placeholder,
@@ -160,7 +166,8 @@ img {
   width: 85%;
   height: 3rem;
   border-radius: 0.5rem;
-  background-color: var(--purple-300);
+  border: 1px solid var(--blue-100);
+  background-color: var(--blue-royal-500);
   color: var(--white-100);
   font-family: Candal;
   font-size: 1.5rem;

@@ -13,8 +13,8 @@
   width: 50rem;
   height: auto;
   border-radius: 1.875rem;
-  background: var(--greyPurple-300);
-  border: 2px solid var(--white-100);
+  background: var(--grey-blue-900);
+  border: 2px solid var(--blue-100);
 }
 
 .iconModal {

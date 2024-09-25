@@ -11,10 +11,11 @@
   justify-content: space-between;
   padding: 1rem;
   align-items: center;
-  width: 85rem;
+  width: 90%;
   height: 6.25rem;
-  border: 2px solid white;
+  border: 2px solid var(--blue-100);
   border-radius: 1.875rem;
+  background-color: var(--grey-blue-700);
 }
 
 .divLogoHeader {
@@ -31,8 +32,9 @@
 .divInputHeader {
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  width: 50%;
+  justify-content: center;
+  gap: 40px;
+  width: 40%;
 }
 
 .avatar {
@@ -46,11 +48,10 @@
   width: 26.5rem;
   height: 3.75rem;
   border-radius: 1.25rem;
-  border: 2px solid var(--white-100);
-  background: var(--lightPurple-100);
+  border: 2px solid var(--blue-100);
 
   padding: 0 15px;
-  background-color: var(--lightPurple-300);
+  background-color: var(--grey-blue-300);
   font-family: Candal;
   font-size: 1.3rem;
   outline: none;
@@ -67,25 +68,26 @@
   flex-direction: column;
   gap: 1rem;
   margin-top: 1rem;
-  width: 16.25rem;
+  width: 15%;
   height: 48rem;
-
-  border: 2px solid var(--white-100);
+  background-color: var(--grey-blue-700);
+  border: 2px solid var(--blue-100);
   border-radius: 1.875rem;
 }
 
 .divWindom {
   margin-top: 1rem;
-  width: 67.5rem;
+  width: 85%;
   height: 48rem;
-  background: var(--darkPurple-600);
-  border: 2px solid var(--white-100);
+  background: var(--grey-blue-700);
+  border: 2px solid var(--blue-100);
   border-radius: 1.875rem;
 }
 
 .mainContent {
   display: flex;
   flex-direction: row;
+  width: 90%;
   gap: 1rem;
 }
 
@@ -93,8 +95,8 @@
   width: 13.9375rem;
   height: 3.5rem;
   border-radius: 1.25rem;
-  border: 2px solid var(--white-100);
-  background: var(--darkPurple-600);
+  border: 2px solid var(--blue-100);
+  background: var(--grey-blue-900);
   color: var(--white-100);
   gap: 1.5rem;
   cursor: pointer;
