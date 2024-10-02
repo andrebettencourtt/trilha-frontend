@@ -1,5 +1,10 @@
 .body {
-  background-color: var(--grey-blue-300);
+  background-image: linear-gradient(
+    -40deg,
+    var(--grey-blue-900),
+    var(--grey-blue-300),
+    var(--grey-blue-900)
+  );
 }
 
 .headerStyle {
@@ -43,7 +48,7 @@
   height: 40rem;
   border-radius: 1rem;
   background: var(--grey-blue-900);
-  border: 1px solid var(--white-100);
+  border: 3px solid var(--white-100);
   gap: 20px;
   padding: 20px;
   position: relative;
@@ -123,11 +128,16 @@ img {
 
 .buttonSignIn {
   text-decoration: none;
-  background-color: transparent;
+  background: none;
   color: var(--blue-100);
   border: none;
   font-size: 1.3rem;
   cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.buttonSignIn:hover {
+  transform: scale(1.05);
 }
 
 .boxSignUp {
@@ -172,6 +182,12 @@ img {
   font-family: Candal;
   font-size: 1.5rem;
   cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px var(--white-100);
 }
 
 .toggle_left {
