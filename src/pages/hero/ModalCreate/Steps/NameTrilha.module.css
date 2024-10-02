@@ -44,10 +44,6 @@
   margin-top: 10px;
 }
 
-.divButtonArrow {
-  text-align: end;
-}
-
 .buttonModal {
   display: flex;
   flex-direction: row;
@@ -61,6 +57,12 @@
   border: 1px solid var(--blue-100);
   color: var(--white-100);
   cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.buttonModal:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px var(--white-100);
 }
 
 .textButtonModal {
