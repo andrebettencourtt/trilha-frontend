@@ -1,8 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import styles from "./LoginPage.module.css";
+import { useNavigate } from "react-router-dom";
 
-export function LoginPage2() {
+/* interface LoginProps {
+  UserLogin: () => void;
+} */
+
+export function LoginPage2(/* { UserLogin }: LoginProps */) {
   const [isSignUpVisible, setIsSignUpVisible] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -11,7 +16,8 @@ export function LoginPage2() {
   const [errorMessage, setErrorMessage] = useState("");
   const [errorMessageSignUp, setErrorMessageSignUp] = useState("");
   const [successMessageSignUp, setSuccessMessageSignUp] = useState("");
-  console.log(email, password, lastName);
+  const [user, setUser] = useState(null);
+  /* console.log(email, password, lastName); */
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -26,6 +32,8 @@ export function LoginPage2() {
       );
 
       console.log(response.data);
+      setUser(response.data);
+
       // Exemplo: redirecionar ou salvar o token
     } catch (error) {
       setErrorMessage("Falha ao fazer login. Verifique suas credenciais.");
@@ -60,143 +68,160 @@ export function LoginPage2() {
     }
   };
 
+  const navigate = useNavigate();
+  /* function Login() {
+    navigate("/hero");
+  } */
+
+  useEffect(() => {
+    if (user) {
+      navigate("/hero");
+    }
+  }, [user, navigate]); //
+
   return (
     <section className={styles.body}>
-      <header className={styles.headerStyle}>
-        <h1 className={styles.logo}>Trilha...</h1>
-        <img
-          className={styles.logoImg}
-          src="../../assets/logo-trilha.svg"
-          alt="Logo"
-        />
-      </header>
+      {user == null ? (
+        <>
+          <header className={styles.headerStyle}>
+            <h1 className={styles.logo}>Trilha...</h1>
+            <img
+              className={styles.logoImg}
+              src="../../assets/logo-trilha.svg"
+              alt="Logo"
+            />
+          </header>
 
-      <section className={styles.containerSignUp}>
-        <div className={styles.bodySignUp}>
-          <main className={`${styles.container}`}>
-            <div className={`${styles.signUp}`}>
-              {/* Formulário de Login */}
-              <form
-                className={`${styles.signUpBox} ${
-                  isSignUpVisible ? styles.hidden : styles.show
-                }`}
-                onSubmit={handleLogin}
-              >
-                <div className={styles.divtext}>
-                  <h1 className={styles.textSignUp}>Entre em sua conta</h1>
-                  <p className={styles.subTextSingUp}>
-                    Ainda não é membro?{" "}
-                    <button
-                      type="button"
-                      className={styles.buttonSignIn}
-                      onClick={() => setIsSignUpVisible(true)}
-                    >
-                      Sign Up
+          <section className={styles.containerSignUp}>
+            <div className={styles.bodySignUp}>
+              <main className={`${styles.container}`}>
+                <div className={`${styles.signUp}`}>
+                  {/* Formulário de Login */}
+                  <form
+                    className={`${styles.signUpBox} ${
+                      isSignUpVisible ? styles.hidden : styles.show
+                    }`}
+                    onSubmit={handleLogin}
+                  >
+                    <div className={styles.divtext}>
+                      <h1 className={styles.textSignUp}>Entre em sua conta</h1>
+                      <p className={styles.subTextSingUp}>
+                        Ainda não é membro?{" "}
+                        <button
+                          type="button"
+                          className={styles.buttonSignIn}
+                          onClick={() => setIsSignUpVisible(true)}
+                        >
+                          Sign Up
+                        </button>
+                      </p>
+                    </div>
+
+                    <div className={styles.boxSignUp}>
+                      <input
+                        className={styles.inputBox}
+                        type="email"
+                        placeholder="E-mail"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                      />
+                      <input
+                        className={styles.inputBox}
+                        type="password"
+                        placeholder="Senha"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                      />
+                    </div>
+
+                    {errorMessage && (
+                      <p className={styles.error}>{errorMessage}</p>
+                    )}
+
+                    <button type="submit" className={styles.button}>
+                      Entrar
                     </button>
-                  </p>
-                </div>
+                  </form>
 
-                <div className={styles.boxSignUp}>
-                  <input
-                    className={styles.inputBox}
-                    type="email"
-                    placeholder="E-mail"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-                  <input
-                    className={styles.inputBox}
-                    type="password"
-                    placeholder="Senha"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                  />
-                </div>
+                  {/* Formulário de Sign Up */}
+                  <form
+                    className={`${styles.signUpBox} ${styles.subter} ${
+                      isSignUpVisible ? styles.show : styles.hidden
+                    }`}
+                    onSubmit={handleSignUp}
+                  >
+                    <div className={styles.divtext}>
+                      <h1 className={styles.textSignUp}>Crie sua conta</h1>
+                      <p className={styles.subTextSingUp}>
+                        Já é membro?{" "}
+                        <button
+                          type="button"
+                          className={styles.buttonSignIn}
+                          onClick={() => setIsSignUpVisible(false)}
+                        >
+                          Sign In
+                        </button>
+                      </p>
+                    </div>
 
-                {errorMessage && <p className={styles.error}>{errorMessage}</p>}
+                    <div className={styles.boxSignUp}>
+                      <div className={styles.inBoxSignUp}>
+                        <input
+                          className={styles.inputBoxName}
+                          type="text"
+                          placeholder="Nome"
+                          value={name}
+                          onChange={(e) => setName(e.target.value)}
+                        />
+                        <input
+                          className={styles.inputBoxName}
+                          type="text"
+                          placeholder="Sobrenome"
+                          value={lastName}
+                          onChange={(e) => setLastName(e.target.value)}
+                        />
+                      </div>
+                      <input
+                        className={styles.inputBox}
+                        type="email"
+                        placeholder="E-mail"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                      />
+                      <input
+                        className={styles.inputBox}
+                        type="password"
+                        placeholder="Senha"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                      />
+                    </div>
 
-                <button type="submit" className={styles.button}>
-                  Entrar
-                </button>
-              </form>
+                    {successMessageSignUp && (
+                      <p className={styles.success}>{successMessageSignUp}</p>
+                    )}
+                    {errorMessageSignUp && (
+                      <p className={styles.error}>{errorMessageSignUp}</p>
+                    )}
 
-              {/* Formulário de Sign Up */}
-              <form
-                className={`${styles.signUpBox} ${styles.subter} ${
-                  isSignUpVisible ? styles.show : styles.hidden
-                }`}
-                onSubmit={handleSignUp}
-              >
-                <div className={styles.divtext}>
-                  <h1 className={styles.textSignUp}>Crie sua conta</h1>
-                  <p className={styles.subTextSingUp}>
-                    Já é membro?{" "}
-                    <button
-                      type="button"
-                      className={styles.buttonSignIn}
-                      onClick={() => setIsSignUpVisible(false)}
-                    >
-                      Sign In
+                    <button type="submit" className={styles.button}>
+                      Criar
                     </button>
-                  </p>
+                  </form>
                 </div>
 
-                <div className={styles.boxSignUp}>
-                  <div className={styles.inBoxSignUp}>
-                    <input
-                      className={styles.inputBoxName}
-                      type="text"
-                      placeholder="Nome"
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
-                    />
-                    <input
-                      className={styles.inputBoxName}
-                      type="text"
-                      placeholder="Sobrenome"
-                      value={lastName}
-                      onChange={(e) => setLastName(e.target.value)}
-                    />
-                  </div>
-                  <input
-                    className={styles.inputBox}
-                    type="email"
-                    placeholder="E-mail"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-                  <input
-                    className={styles.inputBox}
-                    type="password"
-                    placeholder="Senha"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                  />
+                <div
+                  className={`${styles.img} ${
+                    isSignUpVisible ? styles.toggle_left : ""
+                  }`}
+                >
+                  <img src="../../public/imgDuna2.svg" alt="Imagem de Fundo" />
                 </div>
-
-                {successMessageSignUp && (
-                  <p className={styles.success}>{successMessageSignUp}</p>
-                )}
-                {errorMessageSignUp && (
-                  <p className={styles.error}>{errorMessageSignUp}</p>
-                )}
-
-                <button type="submit" className={styles.button}>
-                  Criar
-                </button>
-              </form>
+              </main>
             </div>
-
-            <div
-              className={`${styles.img} ${
-                isSignUpVisible ? styles.toggle_left : ""
-              }`}
-            >
-              <img src="../../public/imgDuna2.svg" alt="Imagem de Fundo" />
-            </div>
-          </main>
-        </div>
-      </section>
+          </section>
+        </>
+      ) : null}
     </section>
   );
 }
