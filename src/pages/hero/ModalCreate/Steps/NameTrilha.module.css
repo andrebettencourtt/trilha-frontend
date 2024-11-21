@@ -28,6 +28,10 @@
   border: none;
   justify-content: space-around;
   text-align: left;
+  color: var(--grey-blue-900);
+  font-size: 1.3rem;
+  padding: 10px;
+  outline: none;
 }
 
 .input::placeholder {
