@@ -34,6 +34,7 @@ const AddStudents = () => {
             </option>{" "}
             {/* <Plus /> */}
           </select>
+          <button type="submit">Criar</button>
         </div>
       </div>
     </div>
