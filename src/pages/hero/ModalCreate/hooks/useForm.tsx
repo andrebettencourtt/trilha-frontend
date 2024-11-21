@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { FormEvent, ReactNode, useState } from "react";
 
-export function useForm(steps: React.ReactNode[]) {
+export function useForm(steps: ReactNode[]) {
   const [currentStep, setCurrentStep] = useState(0);
 
-  function changeStep(i: number, e: React.FormEvent) {
+  function changeStep(i: number, e: FormEvent) {
     e.preventDefault();
 
     if (i < 0 || i >= steps.length) return;
