@@ -11,12 +11,12 @@ interface LoginContextType {
   setLastNameUser: React.Dispatch<React.SetStateAction<string>>;
 }
 
-interface Login {
+/* interface Login {
   userId: number;
   nameUser: string;
   lastNameUser: string;
   emailUser: string;
-}
+} */
 
 const LoginContext = createContext<LoginContextType | undefined>(undefined);
 
