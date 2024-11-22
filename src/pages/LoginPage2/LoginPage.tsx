@@ -6,6 +6,9 @@ import { useLogin } from "./LoginContext/LoginContext";
 import { Loading } from "../../components/loading";
 import { Alert } from "@mui/material";
 
+import imgLogo from "../../../public/logo-trilha.svg";
+import logoDuna from "../../../public/imgDuna2.svg";
+
 /* interface LoginProps {
   UserLogin: () => void;
 } */
@@ -120,11 +123,7 @@ export function LoginPage2(/* { UserLogin }: LoginProps */) {
       <>
         <header className={styles.headerStyle}>
           <h1 className={styles.logo}>Trilha...</h1>
-          <img
-            className={styles.logoImg}
-            src="../../assets/logo-trilha.svg"
-            alt="Logo"
-          />
+          <img className={styles.logoImg} src={imgLogo} alt="Logo" />
         </header>
 
         <section className={styles.containerSignUp}>
@@ -297,7 +296,7 @@ export function LoginPage2(/* { UserLogin }: LoginProps */) {
                   isSignUpVisible ? styles.toggle_left : ""
                 }`}
               >
-                <img src="../../public/imgDuna2.svg" alt="Imagem de Fundo" />
+                <img src={logoDuna} alt="Imagem de Fundo" />
               </div>
             </main>
           </div>
