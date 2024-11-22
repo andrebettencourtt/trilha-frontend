@@ -2,7 +2,6 @@ import { X } from "lucide-react";
 import styles from "./ModalCreate.module.css";
 
 import NameTrilha from "./Steps/NameTrilha";
-
 import { ModalCreateProps } from "./types";
 
 {

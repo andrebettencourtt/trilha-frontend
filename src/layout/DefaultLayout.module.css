@@ -18,6 +18,16 @@
   background-color: var(--grey-blue-700);
 }
 
+.logoHomePage {
+  text-decoration: none;
+  font-size: 3rem;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  color: white;
+  border: none;
+}
+
 .divLogoHeader {
   margin-left: 20px;
   display: flex;
@@ -35,13 +45,6 @@
   justify-content: center;
   gap: 40px;
   width: 40%;
-}
-
-.avatar {
-  width: 4.28819rem;
-  height: 4.0625rem;
-  border: 3px solid var(--green-200);
-  border-radius: 62.5rem;
 }
 
 .searchBar {
@@ -77,6 +80,7 @@
 
 .divWindom {
   margin-top: 1rem;
+  padding: 20px;
   width: 85%;
   height: 48rem;
   background: var(--grey-blue-700);
@@ -95,11 +99,13 @@
   width: 13.9375rem;
   height: 3.5rem;
   border-radius: 1.25rem;
-  border: 2px solid var(--blue-100);
+  /*   border: 2px solid var(--blue-100);
+ */
   background: var(--grey-blue-900);
   color: var(--white-100);
   gap: 1.5rem;
   cursor: pointer;
+  border: none;
 
   display: flex;
   padding-left: 15px;
@@ -107,6 +113,9 @@
   align-items: center;
   font-size: 1.5rem;
   transition: 0.2s ease;
+  /* box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px; */
+  box-shadow: rgba(0.3, 0.3, 0.3, 0.3) 0px 4px 12px;
 }
 
 .buttonContent:hover {

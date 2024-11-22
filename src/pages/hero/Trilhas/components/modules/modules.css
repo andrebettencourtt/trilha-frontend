@@ -1,0 +1,58 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px;
+  font-family: Arial, sans-serif;
+}
+
+.title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 24px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: var(--grey-blue-300);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.card-content {
+  padding: 16px;
+}
+
+.module-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.progress-bar {
+  background: #e0e0e0;
+  border-radius: 4px;
+  height: 8px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-fill {
+  background: var(--blue-royal-400);
+  height: 100%;
+  width: 0;
+  transition: width 0.3s ease-in-out;
+}
+
+.progress-text {
+  font-size: 14px;
+  color: var(--grey-blue-700);
+  margin-top: 8px;
+}

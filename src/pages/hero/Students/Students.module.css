@@ -6,69 +6,9 @@
   margin-top: 2.31rem;
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem;
-  align-items: center;
-  width: 90%;
-  height: 6.25rem;
-  border: 2px solid var(--blue-100);
-  background-color: var(--grey-blue-700);
-  border-radius: 1.875rem;
-}
-
-.divLogoHeader {
-  margin-left: 20px;
-  display: flex;
-  align-items: center;
-  width: 50%;
-  gap: 10rem;
-}
-.divLogoHeader h2 {
-  margin-top: 4px;
-}
-
-.divInputHeader {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  width: 40%;
-}
-
-.avatar {
-  width: 4.28819rem;
-  height: 4.0625rem;
-  border: 3px solid var(--green-200);
-  border-radius: 62.5rem;
-}
-
-.searchBar {
-  width: 26.5rem;
-  height: 3.75rem;
-  border-radius: 1.25rem;
-  border: 2px solid var(--blue-100);
-
-  padding: 0 15px;
-  background-color: var(--grey-blue-300);
-  font-family: Candal;
-  font-size: 1.3rem;
-  outline: none;
-}
-
-.searchBar::placeholder {
-  color: var(--white-100);
-}
-
 .divWindom {
   margin-top: 1rem;
   width: 100%;
-  height: 48rem;
-  border: 2px solid var(--blue-100);
-  background-color: var(--grey-blue-700);
-  border-radius: 1.875rem;
-  padding: 30px;
 }
 
 .mainContent {
@@ -93,13 +33,6 @@
 
 .iconWindomHeader:hover {
   transform: scale(1.3);
-}
-
-.buttonWindomHeader {
-  background-color: transparent;
-  border: transparent;
-  color: var(--white-100);
-  cursor: pointer;
 }
 
 .textWindomHeader {

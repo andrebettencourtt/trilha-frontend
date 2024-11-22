@@ -20,9 +20,9 @@ export function RecoverPassword() {
     navigate("/");
   }
 
-  function handleShowSecondCard() {
+  /*  function handleShowSecondCard() {
     setShowSecondCard(true);
-  }
+  } */
 
   const axios = axiosInstance;
 
@@ -107,6 +107,8 @@ export function RecoverPassword() {
                   onChange={(e) => setEmail(e.target.value)}
                 />
 
+                {error && <p className={styles.error}>{error}</p>}
+
                 <p className={styles.pRecover}>
                   Lorem ipsum dolor sit, amet consectetur adipisicing elit...
                 </p>
@@ -177,6 +179,8 @@ export function RecoverPassword() {
                     onChange={(e) => setCode(code + e.target.value)}
                   />
                 </div>
+
+                {error && <p className={styles.error}>{error}</p>}
 
                 <p className={styles.pRecover2}>Confirme seu e-mail:</p>
                 <input
