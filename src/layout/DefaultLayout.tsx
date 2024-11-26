@@ -15,7 +15,7 @@ export function DefaultLayout() {
   const [carregando, setCarregando] = useState(false);
 
   const { setTrilhas } = useTrilha();
-  const name = sessionStorage.getItem("user");
+  const name = localStorage.getItem("nameUser");
 
   function openModalCreate() {
     setIsModalOpen(true);
@@ -25,7 +25,6 @@ export function DefaultLayout() {
     setIsModalOpen(false);
   }
 
-  // Função para navegar para Alunos
   const navigate = useNavigate();
   function openStudents() {
     navigate("students");
@@ -36,11 +35,10 @@ export function DefaultLayout() {
   }
 
   function openTrilhas() {
-    setBuscaTrilha(true); // Ativa a busca
+    setBuscaTrilha(true);
     navigate("trilhas");
   }
 
-  // Consumo da API de trilhas
   useEffect(() => {
     if (isBuscatrilha) {
       setCarregando(true);

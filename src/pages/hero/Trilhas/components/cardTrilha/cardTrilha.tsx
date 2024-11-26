@@ -6,8 +6,8 @@ export default function CardTrilha() {
   const { trilhas } = useTrilha();
   const navigate = useNavigate();
 
-  function goModulos() {
-    navigate("/hero/modulos");
+  function goModulos(id: number) {
+    navigate(`/hero/trilhas/modulos/${id}`);
   }
 
   return (
@@ -15,7 +15,7 @@ export default function CardTrilha() {
       {trilhas && trilhas.length > 0
         ? trilhas.map((trilha) => (
             <button
-              onClick={goModulos}
+              onClick={() => goModulos(trilha.trailId)}
               key={trilha.trailId}
               className={styles.content}
             >

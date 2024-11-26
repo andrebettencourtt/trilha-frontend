@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import styles from "./LoginPage.module.css";
-import { useNavigate } from "react-router-dom";
 import { useLogin } from "./LoginContext/LoginContext";
 import { Loading } from "../../components/loading";
 import { Alert } from "@mui/material";
 
 import imgLogo from "../../../public/logo-trilha.svg";
 import logoDuna from "../../../public/imgDuna2.svg";
+import { useNavigate } from "react-router-dom";
 
 /* interface LoginProps {
   UserLogin: () => void;
@@ -23,12 +23,10 @@ export function LoginPage2(/* { UserLogin }: LoginProps */) {
   const [errorMessageSignUp, setErrorMessageSignUp] = useState("");
   const [successMessageSignUp, setSuccessMessageSignUp] = useState("");
   const [user, setUser] = useState(null);
-  const [token, setToken] = useState(null);
   const [carregando, setCarregando] = useState(false);
+  const navigate = useNavigate();
 
-  const { setNameUser } = useLogin();
-
-  /* console.log(email, password, lastName); */
+  const { setNameUser, setToken, token } = useLogin();
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -44,23 +42,24 @@ export function LoginPage2(/* { UserLogin }: LoginProps */) {
         }
       );
 
-      sessionStorage.setItem("user", response.data.username);
+      localStorage.setItem("token", response.data.token);
+      localStorage.setItem("nameUser", response.data.nameUser);
 
+      console.log("response: ", response.data);
       setUser(response.data);
       setToken(response.data.token);
-
       setNameUser(response.data.nameUser);
-      setEmail("");
-      setPassword("");
-      sessionStorage.setItem("token", response.data.token);
-      console.log("chegouuu");
+
+      console.log("chegou");
+
+      navigate("/hero");
     } catch (error) {
       setErrorMessage("Senha ou email incorreto!");
       console.error(error);
     } finally {
       setCarregando(false);
-      setEmail("");
-      setPassword("");
+      /*   setEmail("");
+      setPassword(""); */
     }
   };
 
@@ -91,8 +90,10 @@ export function LoginPage2(/* { UserLogin }: LoginProps */) {
       setEmail("");
       setPassword("");
     } catch (error: any) {
-      setErrorMessageSignUp(error.response.data.error);
-      console.error(error);
+      /* if (error.response && error.response.status === 409) {
+        setErrorMessageSignUp("E-mail já existente. Tente outro.");
+      } */
+      console.log("erro");
     } finally {
       setCarregando(false);
       setName("");
@@ -103,7 +104,6 @@ export function LoginPage2(/* { UserLogin }: LoginProps */) {
     }
   };
 
-  const navigate = useNavigate();
   /* function Login() {
     navigate("/hero");
   } */
@@ -113,8 +113,10 @@ export function LoginPage2(/* { UserLogin }: LoginProps */) {
   }
 
   useEffect(() => {
+    console.log("user: ", user);
+    78;
+    console.log("token", token);
     if (user && token) {
-      navigate("/hero");
     }
   }, [user, token, navigate]);
 
