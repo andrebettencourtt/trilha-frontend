@@ -31,8 +31,6 @@ export default function AccountMenu() {
     try {
       const response = await axiosInstance.get("/auth/logout");
       console.log(response.data.data);
-
-      sessionStorage.removeItem("token");
     } catch (error) {
       console.error("Erro ao realizar logout:", error);
     }
@@ -41,6 +39,7 @@ export default function AccountMenu() {
   function logOut() {
     handleLogout;
     navigate("/");
+    localStorage.clear();
   }
 
   return (

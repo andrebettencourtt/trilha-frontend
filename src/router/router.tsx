@@ -6,31 +6,29 @@ import { DefaultLayout } from "../layout/DefaultLayout";
 import { RecoverPassword } from "../pages/LoginPage2/RecoverPassword/RecoverPassword";
 import { Trilhas } from "../pages/hero/Trilhas/Trilhas";
 import { TrilhaProvider } from "../pages/hero/Trilhas/TrilhaContext/TrilhaContext";
-import { AuthProvider } from "../pages/LoginPage2/LoginContext/LoginContext";
+import { useLogin } from "../pages/LoginPage2/LoginContext/LoginContext";
 import ModuleComponent from "../pages/hero/Trilhas/components/modules/modules";
 
 const ConfigRouter = () => {
-  const token = sessionStorage.getItem("token");
+  const { token } = useLogin();
 
   return (
-    <AuthProvider>
-      <TrilhaProvider>
-        <Routes>
-          <Route path="/" element={<LoginPage2 />} />
-          <Route path="/recoverpassword" element={<RecoverPassword />} />
+    <TrilhaProvider>
+      <Routes>
+        <Route path="/" element={<LoginPage2 />} />
+        <Route path="/recoverpassword" element={<RecoverPassword />} />
 
-          {token ? (
-            <Route path="/hero" element={<DefaultLayout />}>
-              <Route path="students" element={<Students />} />
-              <Route path="trilhas" element={<Trilhas />} />
-              <Route path="modulos" element={<ModuleComponent />} />
-            </Route>
-          ) : (
-            <Route path="*" element={<Navigate to="/" replace />} />
-          )}
-        </Routes>
-      </TrilhaProvider>
-    </AuthProvider>
+        {token || localStorage.getItem("token") ? (
+          <Route path="/hero" element={<DefaultLayout />}>
+            <Route path="students" element={<Students />} />
+            <Route path="trilhas" element={<Trilhas />} />
+            <Route path="trilhas/modulos/:id" element={<ModuleComponent />} />
+          </Route>
+        ) : (
+          <Route path="*" element={<Navigate to="/" replace />} />
+        )}
+      </Routes>
+    </TrilhaProvider>
   );
 };
 

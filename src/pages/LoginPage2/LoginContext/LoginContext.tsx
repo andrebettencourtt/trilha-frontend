@@ -9,6 +9,9 @@ interface LoginContextType {
 
   lastNameUser: string;
   setLastNameUser: React.Dispatch<React.SetStateAction<string>>;
+
+  token: string;
+  setToken: React.Dispatch<React.SetStateAction<string>>;
 }
 
 /* interface Login {
@@ -28,6 +31,7 @@ export const AuthProvider = ({ children }: LoginProviderProps) => {
   const [nameUser, setNameUser] = useState<string>("");
   const [lastNameUser, setLastNameUser] = useState<string>("");
   const [userId, setUserId] = useState<number>(0);
+  const [token, setToken] = useState<any>(null);
 
   /* console.log(login); */
 
@@ -40,6 +44,8 @@ export const AuthProvider = ({ children }: LoginProviderProps) => {
         setLastNameUser,
         userId,
         setUserId,
+        setToken,
+        token,
       }}
     >
       {children}
