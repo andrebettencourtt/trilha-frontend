@@ -38,8 +38,8 @@ export function RecoverPassword() {
         setError(""); // Limpa qualquer erro anterior
       }
     } catch (error) {
-      setError("Erro ao enviar o e-mail. Tente novamente.");
-      console.error("Erro ao enviar o e-mail:", error);
+      /*       setError("Erro ao enviar o e-mail. Tente novamente.");
+       */ console.error("Erro ao enviar o e-mail:", error);
     } finally {
       setCarregando(false);
     }
