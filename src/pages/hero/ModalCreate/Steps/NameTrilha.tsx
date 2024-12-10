@@ -5,9 +5,10 @@ import { Loading } from "../../../../components/loading";
 
 interface ModalCreateProps {
   closeModal: () => void;
+  fetchTrilhas: () => void;
 }
 
-const NameTrilha = ({ closeModal }: ModalCreateProps) => {
+const NameTrilha = ({ closeModal, fetchTrilhas }: ModalCreateProps) => {
   const [nameTrail, setNameTrilha] = useState("");
   const [quantModules, setQuantModules] = useState("");
   const [error, setError] = useState("");
@@ -31,6 +32,7 @@ const NameTrilha = ({ closeModal }: ModalCreateProps) => {
 
       console.log(response);
       closeModal(); // Fecha o modal após o sucesso
+      fetchTrilhas();
     } catch (err) {
       console.error(err);
       setError("Ocorreu um erro ao criar a trilha. Tente novamente.");

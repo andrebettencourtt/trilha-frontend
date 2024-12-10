@@ -2,7 +2,11 @@ import { useNavigate } from "react-router-dom";
 import { useTrilha } from "../../TrilhaContext/TrilhaContext";
 import styles from "./styles.module.css";
 
-export default function CardTrilha() {
+export default function CardTrilha({
+  selectedTrilhaId,
+}: {
+  selectedTrilhaId: number | null;
+}) {
   const { trilhas } = useTrilha();
   const navigate = useNavigate();
 
@@ -10,10 +14,14 @@ export default function CardTrilha() {
     navigate(`/hero/trilhas/modulos/${id}`);
   }
 
+  const displayedTrilhas = selectedTrilhaId
+    ? trilhas.filter((trilha) => trilha.trailId === selectedTrilhaId)
+    : trilhas;
+
   return (
     <div className={styles.wrapper}>
-      {trilhas && trilhas.length > 0
-        ? trilhas.map((trilha) => (
+      {displayedTrilhas && displayedTrilhas.length > 0
+        ? displayedTrilhas.map((trilha) => (
             <button
               onClick={() => goModulos(trilha.trailId)}
               key={trilha.trailId}

@@ -5,7 +5,6 @@ import { useLogin } from "./LoginContext/LoginContext";
 import { Loading } from "../../components/loading";
 import { Alert } from "@mui/material";
 
-import imgLogo from "../../../public/logo-trilha.svg";
 import logoDuna from "../../../public/imgDuna2.svg";
 import { useNavigate } from "react-router-dom";
 
@@ -125,7 +124,6 @@ export function LoginPage2(/* { UserLogin }: LoginProps */) {
       <>
         <header className={styles.headerStyle}>
           <h1 className={styles.logo}>Trilha...</h1>
-          <img className={styles.logoImg} src={imgLogo} alt="Logo" />
         </header>
 
         <section className={styles.containerSignUp}>

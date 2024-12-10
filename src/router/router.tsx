@@ -8,6 +8,7 @@ import { Trilhas } from "../pages/hero/Trilhas/Trilhas";
 import { TrilhaProvider } from "../pages/hero/Trilhas/TrilhaContext/TrilhaContext";
 import { useLogin } from "../pages/LoginPage2/LoginContext/LoginContext";
 import ModuleComponent from "../pages/hero/Trilhas/components/modules/modules";
+import Lessons from "../pages/hero/Trilhas/components/lessons/lessons";
 
 const ConfigRouter = () => {
   const { token } = useLogin();
@@ -23,6 +24,7 @@ const ConfigRouter = () => {
             <Route path="students" element={<Students />} />
             <Route path="trilhas" element={<Trilhas />} />
             <Route path="trilhas/modulos/:id" element={<ModuleComponent />} />
+            <Route path="trilhas/modulos/:id/lessons" element={<Lessons />} />
           </Route>
         ) : (
           <Route path="*" element={<Navigate to="/" replace />} />
